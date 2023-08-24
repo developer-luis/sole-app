@@ -23,6 +23,17 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function notes(){
+        return $this->hasMany(Note::class);
+    }
+
+    public function authors(){
+        return $this->morphedByMany(Author::class, 'userable');
+    }
+
+    public function books(){
+        return $this->morphedByMany(Book::class, 'userable');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
