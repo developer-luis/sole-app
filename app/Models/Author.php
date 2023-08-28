@@ -29,6 +29,6 @@ class Author extends Model
     }
 
     public function users(){
-        return $this->morphToMany(Users::class, 'userable');
+        return $this->morphToMany(User::class, 'userable');
     }
 }
